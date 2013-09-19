@@ -4,6 +4,7 @@ ruby "1.9.3"
 
 gem 'bundler', '>= 1.3.0'
 gem 'rails', '4.0.0'
+# gem 'unicorn'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
