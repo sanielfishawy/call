@@ -17,18 +17,19 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find params[:id]
+    @player ||= Player.find params[:id]
     @players = [ @player]
     render :template => "players/edit"
   end
   
   def update
+    normalize_params
     @player = Player.find params[:id]
     if @player.update_attributes(params[:player].only(@player.attributes.keys))
       @player.set_avails(JSON.parse params[:avails])
       redirect_to "/sched/sched"
     else
-      redirect_to player_edit_path(@player.id)
+      edit
     end
   end
   
