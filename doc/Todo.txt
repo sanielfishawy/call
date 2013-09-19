@@ -1,4 +1,7 @@
- - Add it to github 
+ x Add it to github 
+   - remove the extra directories I created.
+   - Fork a branch for rails 4
+   - some changes 
  
  
  x New Player View
