@@ -1,0 +1,82 @@
+body{font-family: helvetica, arial, sans-serif; padding:20px; background: #fafafa; font-size:14px;}
+p{margin:0; padding:0;}
+label{margin:0px; font-weight:bold;}
+h1{margin:0; padding-bottom:0; font-size:22px;}
+h2{margin:0; padding:0; font-size:18px;}
+h3{margin:0; padding-bottom:5px;}
+.pseudo_link{text-decoration:underline; cursor:pointer; color:#36699F;}
+.pseudo_button{font-size:16px; font-weight:bold; padding:10px; color:white; border-radius:4px; cursor:pointer;}
+.pseudo_button.blue{background:#4B8DF9;}
+.pseudo_button.grey{background:#6B6B6B;}
+
+.field_set{
+  padding-bottom:40px;
+  .label{font-weight:bold;}
+} 
+
+
+// ================
+// = Availability =
+// ================
+$red: #C11600;
+$num_cols: 8;
+$col_width: 120px;
+
+#availability_table{
+  border:1px solid #bbb; font-size:11px;
+  td{border:1px solid #bbb; padding:5px; }
+  td.time_slot{background:#aaa;}
+  td.time_slot.valid{background:$red; cursor:pointer;}
+  td.time_slot.valid.available{background:#4FB84B;}
+  col{width:$col_width;}
+  .heading_row{
+    font-weight:bold; font-size:14px;
+    .day_col_heading .pseudo_link{font-size:12px; font-weight:normal;}
+  }
+}
+
+.player_list{
+  width:($col_width * $num_cols); 
+  h2{
+    position:relative; width:$col_width*$num_cols; padding-bottom:15px;
+    .pseudo_button{font-size:12px; position:absolute; right:0; padding:4px 8px;}
+  }
+  .player_block{
+    width:$col_width - 20; float:left; padding: 5px 0px 5px 10px; margin:0px 8px 8px 0px; border-radius:4px; cursor:pointer;
+    border: 1px solid #ddd; background:#f7f7f7; 
+    .player{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-bottom:3px; font-size:13px; color:#444; font-weight:normal;}
+    .player:hover{text-decoration:underline;}
+    .actions{font-size:10px;}
+  }
+  .player_block.selected{
+    background:#4B8DF9; 
+    .player{color:white;}
+    .actions{visibility:hidden;}
+  }
+}
+
+.clear{clear:both;}
+
+// =========
+// = Forms =
+// =========
+#new_player_form{
+  .text{width: 120px; font-size: 13px; position:relative; left:-10px;}
+}
+
+// ===============
+// = Form Errors =
+// ===============
+.errorExplanation{
+  background:#eee; border: 1px solid $red; margin:20px 40% 20px 0px; padding-bottom:15px;
+  h2{font-size:14px; background: $red; color: white; padding:8px;}
+  p{margin:0; padding:15px 10px 15px 15px;}
+  ul{margin:0; padding-left:40px;}
+}
+
+.inline_fields .field_with_errors{display:inline;}
+
+.field_with_errors{
+  label{color:$red;}
+  input{border: 1px solid $red;}
+}

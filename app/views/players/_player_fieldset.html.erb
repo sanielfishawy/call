@@ -1,0 +1,17 @@
+<div class="field_set">
+  <%= f.error_messages %>
+  <input id="player_availability" type="hidden" name="avails" ></input>
+  
+  <div class="inline_fields">
+    <span class="label">First Name</span>
+    <%= f.text_field :first_name, :class => :text, :size => :auto %>
+ 
+    <span class="label" style="padding-left:20px">Last Name</span>
+    <%= f.text_field :last_name, :class => :text, :size => :auto %>
+ 
+    <%= f.label :role %>
+    <span class="label" style="padding:0px">:</span>
+    Cast <%= f.radio_button :role, :cast  %> &nbsp; &nbsp;
+    Crew <%= f.radio_button :role, :crew  %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<%= render :partial => '/shared/players_json' %>
+
+<% [:crew, :cast].each do |role| %>
+  <div class="player_list">
+    <h2><%= display_role role %> <span class="pseudo_button blue" onclick="window.location='/players/new'">Add <%= display_role role %> Members</span></h2>
+    <% @cast_and_crew[role].each do |p| %>
+      <div class="player_block id_<%= p.id %>" data-id="<%= p.id %>">
+        <div class="player" onclick="SchedController.toggle(<%= p.id %>)"><%= p.full_name %></div>
+        <div class="actions">
+          <span class="pseudo_link" onclick="window.location='<%= edit_player_path p.id %>'; event.stopPropagation()">Edit</span> &nbsp; &nbsp; 
+          <span class="pseudo_link" onclick="PlayerController.delete(<%= p.id %>); event.stopPropagation()">Delete</span>
+        </div>
+      </div>
+    <% end %>  
+  </div>
+  <div class="clear" style="height:30px"></div>
+<% end %>
+
+<%= render :partial => '/shared/availability_table', :locals => {:context => :sched} %>

@@ -1,0 +1,33 @@
+<% context = defined?(context) && context %>
+
+<table id="availability_table" class="availabily" border="0" cellspacing="0" cellpadding="0" >
+  <% days = [:mon, :tue, :wed, :thu, :fri, :sat, :sun] %>
+    <% (days.length + 1).times do %>
+      <col/>
+    <% end %>
+    <tr class="heading_row">
+      <td>Time</td>
+      <% days.each do |day| %>
+        <td class="day_col_heading <%= day %>">
+          <%= day.to_s.capitalize_words %>&nbsp; &nbsp;
+          <% unless context == :sched %>
+            <span class="pseudo_link day_all" onclick="AvailabilityView.day_all('<%= day %>')">All</span>&nbsp;
+            <span class="pseudo_link day_none" onclick="AvailabilityView.day_none('<%= day %>')">None</span>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+    <% times.each do |time| %>
+    <tr>
+      <td><%= display_time(time) %></td>
+      <% days.each do |day| %>
+        <td <% unless context == :sched %>onclick="AvailabilityView.time_slot_toggle('<%= day %>','time_<%= time %>')"<% end %>
+            data-day="<%= day %>" 
+            data-time="<%= time %>" 
+            class="<%= "valid available" if [:mon, :tue, :wed, :thu, :fri].include?(day) && time >= 1500 || [:sat, :sun].include?(day) %>
+                  time_slot <%= day %> <%= "time_#{time}" %>"
+          ></td>
+      <% end %>
+    </tr>
+    <% end %>
+</table>

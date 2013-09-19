@@ -1,0 +1,8 @@
+<h1>Add a Member</h1>
+<%= form_for :player, :url => players_path, :html => {:id => :new_player_form} do |f| %>
+  <%= render :partial => 'player_fieldset', :locals => {:f => f} %>
+<% end %>
+
+<%= render :partial => 'player_availability' %>
+
+

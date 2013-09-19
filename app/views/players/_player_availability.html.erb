@@ -1,0 +1,13 @@
+<h3>Availability</h3>
+<div style="padding-bottom:15px">Half hour time slots starting at given time. Click time slot to set availability.</div>
+<div style="padding-bottom:10px">
+  <span class="pseudo_link week_all" onclick="AvailabilityView.week_all()">Set All Available</span> &nbsp;&nbsp;
+  <span class="pseudo_link week_none" onclick="AvailabilityView.week_none()">Set None Available</span>
+</div>
+
+<%= render :partial => '/shared/availability_table' %>
+
+<div style="padding-top:25px">
+  <span class="pseudo_button blue" onclick="PlayerController.post()">Submit</span>&nbsp; &nbsp; 
+  <span class="pseudo_button grey" onclick="window.location = '/sched/sched'">Cancel</span>
+</div>
