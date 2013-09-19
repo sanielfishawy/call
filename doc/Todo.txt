@@ -1,0 +1,16 @@
+ - Add it to github 
+ 
+ 
+ x New Player View
+   x Add fields for Role
+   x Schedule picker
+   - Save to db
+   
+ x Schedule view
+   x All players divided by cast and crew
+   x Ability to edit
+   x Ability to delete
+   x Ability to select for schedule
+   
+   
+  
