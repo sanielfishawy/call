@@ -3,6 +3,7 @@
    - Fork a branch for rails 4
    - some changes 
  this should be on call 4 branch only.
+more
  
  x New Player View
    x Add fields for Role
