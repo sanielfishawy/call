@@ -1,3 +1,20 @@
+$(document).ready -> Login.login_if_necessary()
+
+class window.Login
+  @login_if_necessary: => @login() unless @is_signed_in()
+  
+  @login: => 
+    @pw = prompt("Enter Password")
+    @wrong() unless @pw is "priory"
+    localStorage.signed_in = true
+  
+  @wrong: => 
+    alert "Wrong password. Try again."
+    @login()
+  
+  @is_signed_in: => localStorage.signed_in is "true"
+    
+  
 class window.SchedController
   
   @player_list: => $(".player_list")
