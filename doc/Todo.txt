@@ -2,9 +2,7 @@
    - remove the extra directories I created.
    - Fork a branch for rails 4
    - some changes 
- this should be on call 4 branch only.
-more
- 
+ a 
  x New Player View
    x Add fields for Role
    x Schedule picker
