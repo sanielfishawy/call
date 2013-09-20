@@ -23,4 +23,17 @@ module ApplicationHelper
     j = JSON.dump players.map{ |p| p.attributes.merge(:avails => p.avails.map{|a| a.attributes}) }
     j.html_safe
   end
+  
+  def availability_on(day, time, availability)
+    a = ""
+    availability.each do |avail|
+      avail = avail.symbolize_keys
+      if day == avail[:day].to_sym && time.to_i == avail[:time].to_i
+        a = "available"
+        break
+      end
+    end
+    return a
+  end
+  
 end

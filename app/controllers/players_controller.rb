@@ -12,6 +12,7 @@ class PlayersController < ApplicationController
       @player.set_avails(JSON.parse params[:avails])
       redirect_to "/sched/sched"
     else
+      @avails = JSON.parse params[:avails]
       new
     end
   end

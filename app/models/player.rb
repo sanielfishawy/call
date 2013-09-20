@@ -21,6 +21,6 @@ class Player < ActiveRecord::Base
     # Add the new ones for him
     new_avails = new_avails.map{|a| a.merge({:player_id => id})}
     new_avails.each{|a| Avail.create(a)}
-    
   end
+    
 end
