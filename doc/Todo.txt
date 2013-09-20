@@ -8,7 +8,7 @@
      - Create a new textmate project for call4
      
    - some changes 
- 
+  for a commit
  
  x New Player View
    x Add fields for Role
