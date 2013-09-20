@@ -1,15 +1,27 @@
  x Add it to github 
+<<<<<<< HEAD
    - remove the extra directories I created.
+=======
+   - remove the extra directories I created.   
+>>>>>>> origin/rails4
    x Fork a branch for rails 4
      x Create a new directory in dev for call4
      x Create a fork on github for that call4
      x Clone a fork into that directory
      x Make a change and push it to see if it works.
+<<<<<<< HEAD
      - Create a new textmate project for call4
      
    - some changes 
   for a commit
  
+=======
+     x Create a new textmate project for call4
+     
+ x Switch to rails4
+   
+
+>>>>>>> origin/rails4
  x New Player View
    x Add fields for Role
    x Schedule picker

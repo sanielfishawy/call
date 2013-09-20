@@ -22,7 +22,7 @@ ActionView::Base.send(:include,NoPlanB::Helpers::DeviceAssetPathHelper)
 
 # GARF: Farhad Todo: not important but if easy I cant figure out how to get DeviceAssetPathHelper methods in scope for the sprockets 
 # environment that exists when it processes assets. Using complete pathnames for now. The following line does not work. 
-Sprockets::Helpers::RailsHelper.send(:include,NoPlanB::Helpers::DeviceAssetPathHelper)
+# Sprockets::Helpers::RailsHelper.send(:include,NoPlanB::Helpers::DeviceAssetPathHelper)
 
 # ActiveSupport.on_load(:action_view) do
 #   include ::NoPlanB::Helpers::DeviceAssetPathHelper

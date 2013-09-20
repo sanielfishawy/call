@@ -12,12 +12,13 @@ class PlayersController < ApplicationController
       @player.set_avails(JSON.parse params[:avails])
       redirect_to "/sched/sched"
     else
+      @avails = JSON.parse params[:avails]
       new
     end
   end
 
   def edit
-    @player = Player.find params[:id]
+    @player ||= Player.find params[:id]
     @players = [ @player]
     render :template => "players/edit"
   end
@@ -29,7 +30,11 @@ class PlayersController < ApplicationController
       @player.set_avails(JSON.parse params[:avails])
       redirect_to "/sched/sched"
     else
+<<<<<<< HEAD
       redirect_to edit_player_path(@player.id)
+=======
+      edit
+>>>>>>> origin/rails4
     end
   end
   
