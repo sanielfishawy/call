@@ -30,11 +30,7 @@ class PlayersController < ApplicationController
       @player.set_avails(JSON.parse params[:avails])
       redirect_to "/sched/sched"
     else
-<<<<<<< HEAD
-      redirect_to edit_player_path(@player.id)
-=======
       edit
->>>>>>> origin/rails4
     end
   end
   
