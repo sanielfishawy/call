@@ -1,3 +1,8 @@
+$red: #C11600;
+$num_cols: 8;
+$col_width: 120px;
+$width: $num_cols * $col_width;
+
 body{font-family: helvetica, arial, sans-serif; padding:20px; background: #fafafa; font-size:14px;}
 p{margin:0; padding:0;}
 label{margin:0px; font-weight:bold;}
@@ -10,17 +15,15 @@ h3{margin:0; padding-bottom:5px;}
 .pseudo_button.grey{background:#6B6B6B;}
 
 .field_set{
-  padding-bottom:40px;
+  padding-bottom:30px;
   .label{font-weight:bold;}
+  .note_text_area{width:$width; height:7em; font-size:14px; padding:8px;}
 } 
 
 
 // ================
 // = Availability =
 // ================
-$red: #C11600;
-$num_cols: 8;
-$col_width: 120px;
 
 #availability_table{
   border:1px solid #bbb; font-size:11px;
@@ -35,11 +38,22 @@ $col_width: 120px;
   }
 }
 
+.sched{
+  h2{padding:15px 0px 5px;}
+  .player_list h2{padding-bottom:10px;}
+  .special_avails{
+    .name{font-weight:bold; color:#444; font-size:12px; padding-top:8px;}
+    .note{padding:0; margin:0; font-size:12px;}
+    
+  }
+}
+
 .player_list{
-  width:($col_width * $num_cols); 
+  width:($width); 
   h2{
-    position:relative; width:$col_width*$num_cols; padding-bottom:15px;
+    position:relative; width:$width;
     .pseudo_button{font-size:12px; position:absolute; right:0; padding:4px 8px;}
+    .pseudo_link{font-size:12px; font-weight:normal;}
   }
   .player_block{
     width:$col_width - 20; float:left; padding: 5px 0px 5px 10px; margin:0px 8px 8px 0px; border-radius:4px; cursor:pointer;

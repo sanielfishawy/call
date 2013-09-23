@@ -39,10 +39,15 @@ class PlayersController < ApplicationController
     redirect_to "/sched/sched"
   end
   
+  def players_json
+    render :json => Player.all.sort{|a,b| a.first_name <=> b.first_name}.map{ |p| p.attributes.merge(:avails => p.avails.map{|a| a.attributes}) }
+  end
+  
   private
   
   def normalize_params
     params[:player][:first_name] &&= params[:player][:first_name].strip.capitalize_words
+    params[:player][:last_name] &&= params[:player][:last_name].strip.capitalize_words
   end
   
 end

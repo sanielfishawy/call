@@ -25,3 +25,20 @@
    
    
   
+ x Add a notes field for the user
+   x Bring the remote data base locally from heroku.
+   x Add a text field in the db
+   x Migrate the db
+   x Add the text field in the create and edit forms.
+   x Add the text field in the sched form
+
+ x Unselect All link on sched.
+ x This is the half hour starting at the time indicated.
+ 
+ - Push to github.
+ - Push to heroku.
+ - Migrate the db on heroku.
+ 
+
+
+

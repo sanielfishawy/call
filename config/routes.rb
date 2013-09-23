@@ -3,6 +3,7 @@ Call::Application.routes.draw do
 
 
   get "sched/sched"
+  get "players/players_json"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

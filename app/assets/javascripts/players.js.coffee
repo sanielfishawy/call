@@ -1,15 +1,24 @@
 # ==========
 # = Player =
 # ==========
-$(document).ready -> PlayerLoader.load()
+$(document).ready -> 
+  PlayerLoader.get_players()
+  PlayerController.edit window.player_id if window.page_type is "edit"
 
 
 class window.PlayerLoader
   
-  @load: => 
-    if window.players_json
-      players = JSON.parse players_json
-      new Player player for player in players
+  @load: (players) => 
+    new Player player for player in players
+
+  @get_players: => 
+    $.ajax {
+      async: false
+      dataType: "json"
+      url: "/players/players_json"
+      success: (response) => 
+        @load response 
+    }
     
   
 class window.Player
@@ -31,7 +40,7 @@ class window.Player
     @[key] = attrs[key] for key in keys(attrs)
     Player.players.push @
     
-  full_name: => "#{@first_name} #{@last_name}"
+  full_name: => "#{@first_name} #{@last_name}".capitalize_words()
   
 
 # ====================
@@ -45,9 +54,7 @@ class window.PlayerController
   
   @delete: (id) => window.location = "/players/destroy/#{id}" if confirm("Delete #{Player.find(id).full_name()}?")
   
-  @edit: => 
-    PlayerLoader.load()
-    AvailabilityView.load_avails(Player.first().avails)
+  @edit: (id) => AvailabilityView.load_avails(Player.find(id).avails)
 
   
 # ====================

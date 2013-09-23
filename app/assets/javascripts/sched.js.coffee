@@ -21,7 +21,31 @@ class window.SchedController
   
   @toggle: (id) => 
     $(".player_block.id_#{id}").toggleClass "selected"
+    @show_all()
+    
+  @show_all: =>
     @show_matching()
+    @show_special_avials()
+  
+  @unselect_all: =>
+    $(".player_block").removeClass "selected"
+    @show_all()
+      
+  @show_special_avials: =>
+    players = @selected_players().filter (p) -> p.note
+    return $(".special_avails").html "None" if players.is_blank()
+    
+    notes_html = ""
+    notes_html += @note_html(player) for player in players
+    $(".special_avails").html notes_html
+  
+  @note_html: (player) =>
+    """
+<div class="name">#{player.full_name()}</div>
+<pre class="note">
+#{player.note}
+</pre>
+    """
   
   @show_matching: =>
     return AvailabilityView.week_all() if @selected_players().is_blank()

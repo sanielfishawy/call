@@ -1,8 +1,7 @@
 <script type="text/javascript" charset="utf-8">
-  $(document).ready(function(){PlayerController.edit()})
+  window.page_type = "edit"
+  window.player_id = <%= @player.id %>
 </script>
-
-<%= render :partial => '/shared/players_json' %>
 
 <h1>Edit Member</h1>
 <%= form_for :player, :url => player_path(@player), :method => :put, :html => {:id => :new_player_form} do |f| %>

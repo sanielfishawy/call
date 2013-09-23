@@ -1,19 +1,26 @@
-<%= render :partial => '/shared/players_json' %>
-
-<% [:crew, :cast].each do |role| %>
-  <div class="player_list">
-    <h2><%= display_role role %> <span class="pseudo_button blue" onclick="window.location='/players/new'">Add <%= display_role role %> Members</span></h2>
-    <% @cast_and_crew[role].each do |p| %>
-      <div class="player_block id_<%= p.id %>" data-id="<%= p.id %>">
-        <div class="player" onclick="SchedController.toggle(<%= p.id %>)"><%= p.full_name %></div>
-        <div class="actions">
-          <span class="pseudo_link" onclick="window.location='<%= edit_player_path p.id %>'; event.stopPropagation()">Edit</span> &nbsp; &nbsp; 
-          <span class="pseudo_link" onclick="PlayerController.delete(<%= p.id %>); event.stopPropagation()">Delete</span>
+<div class="sched">
+  <% [:crew, :cast].each do |role| %>
+    <div class="player_list">
+      <h2><%= display_role role %> &nbsp; <span class="pseudo_link" onclick="SchedController.unselect_all()">unselect all</span> <span class="pseudo_button blue" onclick="window.location='/players/new'">Add <%= display_role role %> Members</span></h2>
+      <% @cast_and_crew[role].each do |p| %>
+        <div class="player_block id_<%= p.id %>" data-id="<%= p.id %>">
+          <div class="player" onclick="SchedController.toggle(<%= p.id %>)"><%= p.full_name %></div>
+          <div class="actions">
+            <span class="pseudo_link" onclick="window.location='<%= edit_player_path p.id %>'; event.stopPropagation()">Edit</span> &nbsp; &nbsp; 
+            <span class="pseudo_link" onclick="PlayerController.delete(<%= p.id %>); event.stopPropagation()">Delete</span>
+          </div>
         </div>
-      </div>
-    <% end %>  
-  </div>
-  <div class="clear" style="height:30px"></div>
-<% end %>
+      <% end %>  
+    </div>
+    <div class="clear"></div>
+  <% end %>
+  
+  <h2>Special Availability</h2>
+  <div class="special_avails">None</div>
 
-<%= render :partial => '/shared/availability_table', :locals => {:context => :sched} %>
+  <h2>Weekly Availability</h2>
+  <div style="padding-bottom:8px">Time slots represent the half hour starting at the indicated time.</div>
+  <%= render :partial => '/shared/availability_table', :locals => {:context => :sched} %>
+  
+</div>
+

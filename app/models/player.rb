@@ -1,7 +1,7 @@
 class Player < ActiveRecord::Base
   include EnumHandler
   
-  attr_accessible :first_name, :last_name, :role
+  attr_accessible :first_name, :last_name, :role, :note
   
   define_enum :role, [:cast, :crew], :primary => true
   
@@ -11,7 +11,7 @@ class Player < ActiveRecord::Base
   validates :first_name, :uniqueness => {:scope => :last_name, :message => "  :: A player with this first and last name exists."}
   
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}".capitalize_words
   end
   
   def set_avails(new_avails)

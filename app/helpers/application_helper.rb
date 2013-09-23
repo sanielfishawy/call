@@ -18,12 +18,7 @@ module ApplicationHelper
   def display_role(role)
     role.to_s.capitalize_words
   end
-  
-  def players_json(players)
-    j = JSON.dump players.map{ |p| p.attributes.merge(:avails => p.avails.map{|a| a.attributes}) }
-    j.html_safe
-  end
-  
+    
   def availability_on(day, time, availability)
     a = ""
     availability.each do |avail|
