@@ -11,7 +11,7 @@ gem 'rails', '4.0.0'
 
 gem 'pg'
 
-gem 'json'
+gem 'json', '>= 2.3.0'
 gem 'dynamic_form'
 
 # Gems used only for assets and not required
