@@ -27,7 +27,7 @@ gem 'uglifier', '>= 1.3.0'
 # Gems that provide rails3 functionality that was removed in rails4
 gem 'protected_attributes'
 gem 'rails-observers'
-gem 'actionpack-page_caching'
+gem 'actionpack-page_caching', '>= 1.2.1'
 gem 'actionpack-action_caching'
 gem 'activerecord-deprecated_finders'
 
