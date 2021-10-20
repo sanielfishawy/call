@@ -3,7 +3,7 @@ class Player < ActiveRecord::Base
   
   attr_accessible :first_name, :last_name, :role, :note
   
-  define_enum :role, [:cast, :crew], :primary => true
+  # define_enum :role, [:cast, :crew], :primary => true
   
   has_many :avails, :dependent => :destroy
   
@@ -22,5 +22,13 @@ class Player < ActiveRecord::Base
     new_avails = new_avails.map{|a| a.merge({:player_id => id})}
     new_avails.each{|a| Avail.create(a)}
   end
-    
+
+  def self.crew
+    Player.where({role: 'crew'})
+  end
+  
+  def self.cast
+    Player.where({role: 'cast'})
+  end 
+
 end

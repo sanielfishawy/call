@@ -1,0 +1,4 @@
+To start postgresql:
+  brew services start postgresql
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/postgresql/bin/postgres -D /usr/local/var/postgres

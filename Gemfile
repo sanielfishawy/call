@@ -1,15 +1,19 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
+# ruby "1.9.3"
+ruby "2.5.9"
 
 gem 'bundler', '>= 1.3.0'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.8'
+# gem 'rails', '6.1.4'
 # gem 'unicorn'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+# gem 'pg'
+# gem 'pg', '~> 1.0.0'
+gem 'pg', '~> 0.18'
 
 gem 'json'
 gem 'dynamic_form'
@@ -49,4 +53,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+gem 'byebug'

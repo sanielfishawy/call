@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20130923185144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: true do |t|
+  create_table "activities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "avails", force: true do |t|
+  create_table "avails", force: :cascade do |t|
     t.integer  "player_id"
     t.string   "day"
     t.integer  "time"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20130923185144) do
     t.datetime "updated_at"
   end
 
-  create_table "players", force: true do |t|
+  create_table "players", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "role"
