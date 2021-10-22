@@ -1,6 +1,30 @@
 development:
   adapter: postgresql
   encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: <%= ENV['PG_PW'] %>
+  database: postgres
+  host: "/cloudsql/call-329704:us-central1:call"
+  host: 34.134.26.110 
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: postgres
+  pool: 5
+  host: 34.134.26.110
+  username: postgres
+  sslmode: disable
+  password: <%= ENV['PG_PW'] %>
+developmentsq:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+production:
+  adapter: postgresql
+  encoding: unicode
   database: call_development
   pool: 5
   host: localhost

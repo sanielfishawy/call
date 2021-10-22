@@ -54,3 +54,5 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'byebug'
+
+gem 'sqlite3', '~> 1.3.6'

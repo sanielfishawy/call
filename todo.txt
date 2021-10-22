@@ -2,3 +2,9 @@ To start postgresql:
   brew services start postgresql
 Or, if you don't want/need a background service you can just run:
   /usr/local/opt/postgresql/bin/postgres -D /usr/local/var/postgres
+
+psql "sslmode=disable dbname=postgres user=postgres hostaddr=34.134.26.110"
+
+Add PG_PW to env. 
+Host on google.
+Use env for pw
