@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby "2.5.9"
 
 gem 'bundler', '>= 1.3.0'
-gem 'rails', '4.2.8'
+gem 'rails', '5.2.6.2'
 # gem 'rails', '6.1.4'
 # gem 'unicorn'
 
@@ -21,8 +21,8 @@ gem 'dynamic_form'
 # Gems used only for assets and not required
 # in production environments by default.
 
-gem 'sass-rails',   '~> 4.0.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0.5'
+gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -31,14 +31,14 @@ gem 'uglifier', '>= 1.3.0'
 # Gems that provide rails3 functionality that was removed in rails4
 gem 'protected_attributes'
 gem 'rails-observers'
-gem 'actionpack-page_caching'
-gem 'actionpack-action_caching'
+gem 'actionpack-page_caching', '>= 1.2.4'
+gem 'actionpack-action_caching', '>= 1.2.2'
 gem 'activerecord-deprecated_finders'
 
 #  For heroku
 gem 'rails_12factor', group: :production
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
